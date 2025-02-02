@@ -1,5 +1,6 @@
 BEGIN;
 
+
 CREATE TABLE IF NOT EXISTS public."Professor"
 (
     "ProfessorID" bigserial NOT NULL,
@@ -19,6 +20,25 @@ CREATE TABLE IF NOT EXISTS public."Course"
     PRIMARY KEY ("CourseID")
 );
 
-SELECT * FROM Course
+INSERT INTO "Course" ("CourseID", "Name", "Credits") 
+VALUES (1, 'Algebra', 5);
+
+SELECT * FROM "Course";
+
+UPDATE "Course" 
+SET "Credits" = 10
+WHERE "CourseID" = 1; 
+
+SELECT * FROM "Course";
+
+DELETE FROM "Course" 
+WHERE "CourseID" = 1;
+
+SELECT * FROM "Course";
+
+INSERT INTO "Professor" ("ProfessorID", "Name", "Surname", "Salary", "Email", "Courses") 
+VALUES (1, 'Billy', 'Herrington', 10000, 'billyherrington@gmail.com', 'Algebra');
+
+SELECT * FROM "Professor";
 
 END;
