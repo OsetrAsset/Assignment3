@@ -1,0 +1,24 @@
+BEGIN;
+
+CREATE TABLE IF NOT EXISTS public."Professor"
+(
+    "ProfessorID" bigserial NOT NULL,
+    "Name" character varying(50) NOT NULL,
+    "Surname" character varying(50) NOT NULL,
+    "Salary" bigint NOT NULL,
+    "Email" character varying(100) NOT NULL,
+    "Courses" character varying(200) NOT NULL,
+    PRIMARY KEY ("ProfessorID")
+);
+
+CREATE TABLE IF NOT EXISTS public."Course"
+(
+    "CourseID" bigserial NOT NULL,
+    "Name" character varying(50) NOT NULL,
+    "Credits" bigint NOT NULL,
+    PRIMARY KEY ("CourseID")
+);
+
+SELECT * FROM Course
+
+END;
